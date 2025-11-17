@@ -62,13 +62,13 @@ printf "%-25s %s\n" "BUCKET_NAME:" "${BUCKET_NAME:-<undefined>}"
 printf "%-25s %s\n" "AWS_USER_ID:" "${AWS_USER_ID:-<undefined>}"
 echo "=========="
 
-#msg "S3 バケットを作成しています。"
-#aws s3 mb s3://"${BUCKET_NAME}" --profile "${AWS_PROFILE}" --region "${AWS_REGION}"
-#
-#msg "S3 バケットのバージョニングを設定しています。"
-#aws s3api put-bucket-versioning --profile "${AWS_PROFILE}" --region "${AWS_REGION}" \
-#  --bucket "${BUCKET_NAME}" \
-#  --versioning-configuration Status=Enabled
+msg "S3 バケットを作成しています。"
+aws s3 mb s3://"${BUCKET_NAME}" --profile "${AWS_PROFILE}" --region "${AWS_REGION}"
+
+msg "S3 バケットのバージョニングを設定しています。"
+aws s3api put-bucket-versioning --profile "${AWS_PROFILE}" --region "${AWS_REGION}" \
+  --bucket "${BUCKET_NAME}" \
+  --versioning-configuration Status=Enabled
 
 msg "S3 バケットにタグを設定しています。"
 aws s3api put-bucket-tagging --profile "${AWS_PROFILE}" \
