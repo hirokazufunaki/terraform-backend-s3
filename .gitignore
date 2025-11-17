@@ -1,0 +1,9 @@
+# IntelliJ IDEA
+.idea
+
+# Visual Studio profiler
+*.vs
+
+# Terraform
+backend.tf
+*.tfbackend
